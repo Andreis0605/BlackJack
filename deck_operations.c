@@ -71,3 +71,4 @@ int card_value(int *current_total_value, char card)
     if (card == 'T')
         *current_total_value += 10;
 }
+
