@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "deck_operations.h": "c",
+        "ncurses.h": "c"
+    }
+}
