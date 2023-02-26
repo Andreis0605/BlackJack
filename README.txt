@@ -1,0 +1,1 @@
+To make the card_translation function to use parameters instead of return
