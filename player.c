@@ -13,5 +13,9 @@ void player_add_in_hand(char *player_hand, char card)
 
 int hand_value(char *player_hand)
 {
-    int value;
+    int value = 0, i;
+    for (i = 0; i < strlen(player_hand); i++)
+    {
+        ;
+    }
 }
