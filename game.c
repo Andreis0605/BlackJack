@@ -7,7 +7,10 @@
 int main()
 {
     int k, deck[53], i;
-    char *card;
+    char card;
     initialize_deck(deck);
+    k=draw_card(deck);
+    card=card_translation(k);
+    printf("%c\n",card);
     return 0;
 }

@@ -52,7 +52,22 @@ int card_value(int *current_total_value, char card)
     int i;
     for (i = 2; i <= 8; i++)
     {
-        if (card == (char)('0' + i)) *current_total_value+=i;
+        if (card == (char)('0' + i))
+            *current_total_value += i;
     }
-    
+    if (card == 'J')
+        *current_total_value += 10;
+    if (card == 'Q')
+        *current_total_value += 10;
+    if (card == 'K')
+        *current_total_value += 10;
+    if (card == 'A')
+    {
+        if (*current_total_value + 10 > 21)
+            *current_total_value += 1;
+        else
+            *current_total_value += 11;
+    }
+    if (card == 'T')
+        *current_total_value += 10;
 }
