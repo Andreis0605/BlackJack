@@ -10,5 +10,8 @@ deck_operations.o: deck_operations.c deck_operations.h
 interface.o: interface.c interface.h
 	gcc -Wall -c interface.c -lncurses
 
+player.o: player.c player.h
+	gcc -Wall -c player.c -lncurses
+
 clean:
 	rm *.o
