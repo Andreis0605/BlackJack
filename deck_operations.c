@@ -4,6 +4,15 @@
 #include <string.h>
 #include "deck_operations.h"
 
+int comp(const void *a, const void *b)
+{
+    char *x, *y;
+    x = (char *)a;
+    y = (char *)b;
+    return (int)*y-*x;
+}
+
+
 void initialize_deck(int *deck)
 {
     int i;
@@ -74,7 +83,13 @@ int card_value(int *current_total_value, char card)
 }
 int hand_value(char *player_hand)
 {
-    int value = 0, i;
+    int value = 0, i, j;
+    char *copy_player_hand, aux_char;
+    strcpy(copy_player_hand, player_hand);
+
+    // sorting copy_player_hand
+    qsort(copy_player_hand, strlen(copy_player_hand), sizeof(char), comp);
+
     for (i = 0; i < strlen(player_hand); i++)
     {
         ;
