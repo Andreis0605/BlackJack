@@ -83,7 +83,7 @@ int card_value(int *current_total_value, char card)
 }
 int hand_value(char *player_hand)
 {
-    int value = 0, i, j;
+    int value = 0, i, j,count_A=0;
     char *copy_player_hand, aux_char;
     strcpy(copy_player_hand, player_hand);
 
@@ -92,6 +92,9 @@ int hand_value(char *player_hand)
 
     for (i = 0; i < strlen(player_hand); i++)
     {
-        ;
+        if(copy_player_hand[i]=='A')
+        {
+            count_A++;
+        }
     }
 }
