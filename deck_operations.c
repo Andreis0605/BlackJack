@@ -71,4 +71,11 @@ int card_value(int *current_total_value, char card)
     if (card == 'T')
         *current_total_value += 10;
 }
-
+int hand_value(char *player_hand)
+{
+    int value = 0, i;
+    for (i = 0; i < strlen(player_hand); i++)
+    {
+        ;
+    }
+}
