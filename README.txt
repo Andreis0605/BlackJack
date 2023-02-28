@@ -1,1 +1,2 @@
-To make the card_translation function to use parameters instead of return
+Next step: Start creating the game
+To do: test add_in_hand function
