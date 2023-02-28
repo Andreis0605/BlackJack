@@ -6,10 +6,11 @@
 #include "deck_operations.h"
 #include "interface.h"
 #include "player.h"
+#include "dealer.h"
 
 int main()
 {
-    int playing=1,aux_card_value;
+    int playing=1,aux_card_value,deck[53];
     char dealer_hand[12],player_hand[12],aux_card;
 
     int mrow, mcol;
@@ -26,12 +27,11 @@ int main()
     mvprintw(9, mcol - 20, "HAND VALUE:");
     mvprintw(mrow - 10, 40, "HIT (Press H)");
     mvprintw(mrow - 8, 40, "STAND (Press S)");
-
-    while(playing)
+    /*while(playing)
     {
-        ;
-    }
+        aux_card_value=draw_card(deck);
 
+    }*/
     getch();
     endwin();
 

@@ -1,5 +1,5 @@
-blackjack: game.o deck_operations.o interface.o player.o
-	gcc -Wall game.o deck_operations.o interface.o player.o -o blackjack -lncurses
+blackjack: game.o deck_operations.o interface.o player.o dealer.o
+	gcc -Wall game.o deck_operations.o interface.o player.o dealer.o -o blackjack -lncurses
 
 game.o: game.c
 	gcc -c game.c -lncurses

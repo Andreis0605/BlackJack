@@ -25,12 +25,6 @@ void interface_initialization()
     endwin();
 }
 
-//posible delete
-void interface_finish()
-{
-    endwin();
-}
-
 void update_player_hand(char *hand,int mcol)
 {
     int i,movement=0;
@@ -65,4 +59,14 @@ void update_dealer_hand(char *hand)
             movement+=2;
         }
     }
+}
+
+void update_player_value(int value,int mcol)
+{
+    mvprintw(9,mcol-8,"%d",value);
+}
+
+void update_dealer_value(int value,int mcol)
+{
+    mvprintw(9,20,"%d",value);
 }
