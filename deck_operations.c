@@ -9,9 +9,28 @@ int comp(const void *a, const void *b)
     char *x, *y;
     x = (char *)a;
     y = (char *)b;
-    return (int)*y-*x;
+    return (int)*y - *x;
 }
 
+int add_aces_value(int value, int aces_number)
+{
+    int i, aces_value, max_value;
+    max_value = value;
+    aces_value = aces_number;
+    for (i = 0; i <= aces_number; i++)
+    {
+        if (value + aces_value > max_value && value + aces_value <= 21)
+        {
+            max_value = value + aces_value;
+        }
+        aces_value += 10;
+    }
+    if (max_value == value)
+        value += aces_number;
+    else
+        value = max_value;
+    return value;
+}
 
 void initialize_deck(int *deck)
 {
@@ -81,20 +100,38 @@ int card_value(int *current_total_value, char card)
     if (card == 'T')
         *current_total_value += 10;
 }
+
 int hand_value(char *player_hand)
 {
-    int value = 0, i, j,count_A=0;
+    int value = 0, i, j, count_A = 0;
     char *copy_player_hand, aux_char;
     strcpy(copy_player_hand, player_hand);
 
     // sorting copy_player_hand
     qsort(copy_player_hand, strlen(copy_player_hand), sizeof(char), comp);
 
-    for (i = 0; i < strlen(player_hand); i++)
+    for (i = 0; i < strlen(copy_player_hand); i++)
     {
-        if(copy_player_hand[i]=='A')
+        if (copy_player_hand[i] == 'A')
         {
             count_A++;
         }
+        else
+        {
+            if (copy_player_hand[i] >= '2' && copy_player_hand[i] <= '9')
+            {
+                value += (int)(copy_player_hand[i] - '0');
+            }
+            if (copy_player_hand[i] == 'J')
+                value += 10;
+            if (copy_player_hand[i] == 'Q')
+                value += 10;
+            if (copy_player_hand[i] == 'K')
+                value += 10;
+            if (copy_player_hand[i] == 'T')
+                value += 10;
+        }
     }
+    value = add_aces_value(value, count_A);
+    return value;
 }
