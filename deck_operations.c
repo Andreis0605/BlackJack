@@ -79,7 +79,7 @@ char card_translation(int card_number)
 int card_value(int *current_total_value, char card)
 {
     int i;
-    for (i = 2; i <= 8; i++)
+    for (i = 2; i <= 9; i++)
     {
         if (card == (char)('0' + i))
             *current_total_value += i;

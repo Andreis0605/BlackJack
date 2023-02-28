@@ -8,6 +8,5 @@ void dealer_add_in_hand(char *dealer_hand, char card)
     int n;
     n = strlen(dealer_hand);
     dealer_hand[n] = card;
-    dealer_hand[n + 1] = '\n';
-
+    dealer_hand[n + 1] = '\0';
 }
