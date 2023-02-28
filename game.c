@@ -9,6 +9,9 @@
 
 int main()
 {
+    int playing=1,aux_card_value;
+    char dealer_hand[12],player_hand[12],aux_card;
+
     int mrow, mcol;
     initscr();
     raw();
@@ -23,7 +26,12 @@ int main()
     mvprintw(9, mcol - 20, "HAND VALUE:");
     mvprintw(mrow - 10, 40, "HIT (Press H)");
     mvprintw(mrow - 8, 40, "STAND (Press S)");
-    update_player_hand("T76AJ", mcol);
+
+    while(playing)
+    {
+        ;
+    }
+
     getch();
     endwin();
 

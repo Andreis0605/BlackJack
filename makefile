@@ -13,5 +13,8 @@ interface.o: interface.c interface.h
 player.o: player.c player.h
 	gcc -Wall -c player.c -lncurses
 
+dealer.o: dealer.c dealer.h
+	gcc -Wall -c dealer.c -lncurses
+
 clean:
 	rm *.o
