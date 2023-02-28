@@ -48,3 +48,21 @@ void update_player_hand(char *hand,int mcol)
         }
     }
 }
+
+void update_dealer_hand(char *hand)
+{
+    int i,movement=0;
+    for(i=0;i<strlen(hand);i++)
+    {
+        if(hand[i]=='T')
+        {
+            mvprintw(7,8+movement,"10 ");
+            movement+=3;
+        }
+        else
+        {
+            mvprintw(7,8+movement,"%c ",hand[i]);
+            movement+=2;
+        }
+    }
+}
