@@ -23,6 +23,9 @@ int main()
     // init_pair(1, COLOR_RED, COLOR_BLACK);
     refresh();
     getmaxyx(stdscr, mrow, mcol);
+
+
+
     mvprintw(0, mcol / 2 - 4, "BLACKJACK");
     mvprintw(5, 8, "DEALER");
     mvprintw(5, mcol - 20, "YOU");
@@ -30,6 +33,7 @@ int main()
     mvprintw(9, mcol - 20, "HAND VALUE:");
     mvprintw(mrow - 10, 40, "HIT (Press H)");
     mvprintw(mrow - 8, 40, "STAND (Press S)");
+
     while(playing)
     {
         aux_card_value=draw_card(deck);
