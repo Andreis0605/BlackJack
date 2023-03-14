@@ -94,3 +94,8 @@ void player_bust(int mcol)
 {
     mvprintw(11,mcol-20,"BUST");
 }
+
+void player_blackjack(int mcol)
+{
+     mvprintw(11,mcol-20,"BLACKJACK");
+}

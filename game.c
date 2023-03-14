@@ -56,8 +56,8 @@ int main()
         update_player_hand(player_hand, mcol);
         hide_dealer_hand(dealer_hand);
 
-        aux_card_value=hand_value(player_hand);
-        update_player_value(aux_card_value,mcol);
+        aux_card_value = hand_value(player_hand);
+        update_player_value(aux_card_value, mcol);
 
         player_turn = 1;
         while (player_turn)
@@ -75,9 +75,14 @@ int main()
                 if (aux_value > 21)
                 {
                     player_bust(mcol);
-                    player_turn=0;
+                    player_turn = 0;
                 }
-                update_player_value(aux_value,mcol);
+                if (aux_value == 21)
+                {
+                    player_blackjack(mcol);
+                    player_turn = 0;
+                }
+                update_player_value(aux_value, mcol);
                 break;
             case 's':
                 player_turn = 0;

@@ -6,3 +6,5 @@ void update_player_value(int value,int mcol);
 void update_dealer_value(int value,int mcol);
 void hide_dealer_hand(char *hand);
 void player_bust(int mcol);
+void player_blackjack(int mcol);
+
