@@ -104,7 +104,7 @@ int card_value(int *current_total_value, char card)
 int hand_value(char *player_hand)
 {
     int value = 0, i, j, count_A = 0;
-    char *copy_player_hand, aux_char;
+    char copy_player_hand[12], aux_char;
     strcpy(copy_player_hand, player_hand);
 
     // sorting copy_player_hand

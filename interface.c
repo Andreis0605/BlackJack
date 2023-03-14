@@ -89,3 +89,8 @@ void hide_dealer_hand(char *hand)
         }
     }
 }
+
+void player_bust(int mcol)
+{
+    mvprintw(11,mcol-20,"BUST");
+}
