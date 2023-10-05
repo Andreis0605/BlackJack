@@ -25,6 +25,8 @@ void interface_initialization()
     endwin();
 }
 
+//function that displays the player's cards
+
 void update_player_hand(char *hand, int mcol)
 {
     int i, movement = 0;
@@ -42,6 +44,8 @@ void update_player_hand(char *hand, int mcol)
         }
     }
 }
+
+//function that displays the dealer's cards
 
 void update_dealer_hand(char *hand)
 {
@@ -61,15 +65,22 @@ void update_dealer_hand(char *hand)
     }
 }
 
+
+//function that displays the value of the player's hand
+
 void update_player_value(int value, int mcol)
 {
     mvprintw(9, mcol - 8, "%d", value);
 }
 
+//function that displays the value of the dealer's hand
+
 void update_dealer_value(int value, int mcol)
 {
     mvprintw(9, 20, "%d", value);
 }
+
+//function that hides one card of the dealer and displays the other one
 
 void hide_dealer_hand(char *hand)
 {
@@ -90,10 +101,14 @@ void hide_dealer_hand(char *hand)
     }
 }
 
+//function that displays when a player went over 21
+
 void player_bust(int mcol)
 {
     mvprintw(11,mcol-20,"BUST");
 }
+
+//function that displays when a player has 21
 
 void player_blackjack(int mcol)
 {

@@ -4,6 +4,7 @@
 #include <string.h>
 #include "deck_operations.h"
 
+//function that compares 2 characters
 
 int comp(const void *a, const void *b)
 {
@@ -12,6 +13,8 @@ int comp(const void *a, const void *b)
     y = (char *)b;
     return (int)*y - *x;
 }
+
+// function that adds the value of aces to a hand
 
 int add_aces_value(int value, int aces_number)
 {
@@ -33,6 +36,8 @@ int add_aces_value(int value, int aces_number)
     return value;
 }
 
+// function that initalizes the deck(shuffle)
+
 void initialize_deck(int *deck)
 {
     int i;
@@ -41,6 +46,8 @@ void initialize_deck(int *deck)
         deck[i] = 0;
     }
 }
+
+// function that picks a random card from the remaining deck
 
 int draw_card(int *deck)
 {
@@ -56,6 +63,8 @@ int draw_card(int *deck)
     deck[card] = 1;
     return card;
 }
+
+// function that translates the card drawn from the deck
 
 char card_translation(int card_number)
 {
@@ -76,6 +85,8 @@ char card_translation(int card_number)
     if (remaining == 9)
         return 'T';
 }
+
+// function that attributes a value to a translated card
 
 int card_value(int *current_total_value, char card)
 {
@@ -101,6 +112,8 @@ int card_value(int *current_total_value, char card)
     if (card == 'T')
         *current_total_value += 10;
 }
+
+// function that calculates the total value of a hand
 
 int hand_value(char *player_hand)
 {
